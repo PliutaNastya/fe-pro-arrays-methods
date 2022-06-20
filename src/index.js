@@ -70,7 +70,7 @@ const minPriceReducer = () => {
 
   //Второй вариант
 
-  return goods.reduce((acc, current) => Math.min(acc, current.price), 0);
+  return goods.reduce((acc, current) => Math.min(acc, current.price), Infinity);
 };
 
 const maxPriceReducer = () => {

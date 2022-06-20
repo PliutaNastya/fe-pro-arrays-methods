@@ -65,13 +65,21 @@ const rangeFilter = (from, to) => {
 };
 
 const minPriceReducer = () => {
-  let minPrice = goods.reduce((a, b) => a.price < b.price ? a : b);
-  return minPrice.price;
+  // let minPrice = goods.reduce((a, b) => a.price < b.price ? a : b);
+  // return minPrice.price;
+
+  //Второй вариант
+
+  return goods.reduce((acc, current) => Math.min(acc, current.price), 0);
 };
 
 const maxPriceReducer = () => {
-  let maxPrice = goods.reduce((a, b) => a.price > b.price ? a : b);
-  return maxPrice.price;
+  // let maxPrice = goods.reduce((a, b) => a.price > b.price ? a : b);
+  // return maxPrice.price;
+
+  //Второй вариант
+
+  return goods.reduce((acc, current) => Math.max(acc, current.price), 0);
 };
 
 const toMaxSorter = () => {
